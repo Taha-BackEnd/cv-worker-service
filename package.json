@@ -1,0 +1,35 @@
+{
+  "name": "cv-worker-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taha-BackEnd/cv-worker-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Taha-BackEnd/cv-worker-service/issues"
+  },
+  "homepage": "https://github.com/Taha-BackEnd/cv-worker-service#readme",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.9",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "mammoth": "^1.11.0",
+    "openai": "^6.9.0",
+    "pdf-parse": "^2.4.5"
+  }
+}
