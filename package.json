@@ -36,6 +36,8 @@
     "mammoth": "^1.11.0",
     "openai": "^6.9.0",
     "pdf.js-extract": "^0.2.1",
-    "tiktoken": "^1.0.22"
+    "tiktoken": "^1.0.22",
+    "winston": "^3.18.3",
+    "winston-daily-rotate-file": "^5.0.0"
   }
 }

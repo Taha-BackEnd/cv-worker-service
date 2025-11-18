@@ -1,6 +1,7 @@
 import amqp from 'amqplib';
 import dotenv from 'dotenv';
 import { performCvProcessing } from './processingLogic';
+import { postNotification } from './services/apiClient';
 
 dotenv.config();
 
@@ -33,7 +34,7 @@ const startWorker = async () => {
                         description: 'Your CV has been processed and your profile is ready.' ,
                         accountType: 'Candidate'
                     };
-                    channel.sendToQueue(NOTIFICATION_QUEUE, Buffer.from(JSON.stringify(notification)));
+                    await postNotification(notification);
                     
                 } catch (error: any) {
                     console.error(`[!] Error processing CV for ${jobPayload.candidateId}:`, error.message);
@@ -45,7 +46,7 @@ const startWorker = async () => {
                         description: 'We could not process your CV. Please try again or contact support.',
                         accountType: 'Candidate'
                     };
-                    channel.sendToQueue(NOTIFICATION_QUEUE, Buffer.from(JSON.stringify(errorNotification)));
+                    await postNotification(errorNotification);
                 } finally {
                     channel.ack(msg); // Remove message from queue
                 }
